@@ -6,8 +6,14 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.routeName = this.router.currentRoute.name;
-    this.router.on('routeDidChange', ({ to }) => {
-      this.set('routeName', to.name);
-    })
+    this.cb = ({ to }) => {
+      if (!this.isDestroyed) {
+        this.set('routeName', to.name);
+      }
+    };
+    this.router.on('routeDidChange', this.cb);
+  },
+  willDestroy() {
+    this.router.off('routeDidChange', this.cb);
   }
 });
