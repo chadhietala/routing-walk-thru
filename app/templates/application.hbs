@@ -1,5 +1,20 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<ul>
+  <li class="app">app</li>
+  <li class="index">index</li>
+  <li class="parent">parent</li>
+  <li class="parent-index">parent-index</li>
+  <li class="parent-child">parent-child</li>
+  <li class="other">other</li>
+</ul>
 
-{{outlet}}
+<div class="app">
+  <h1>Application.hbs</h1>
+  <RouteLogger />
+  <LinkTo @route="index">Index</LinkTo>
+  <LinkTo @route="other">Other</LinkTo>
+  <LinkTo @route="parent">Parent</LinkTo>
+  <LinkTo @route="parent.index">Parent/Index</LinkTo>
+  <LinkTo @route="parent.child">Parent/Child</LinkTo>
+  {{outlet}}
+</div>
+

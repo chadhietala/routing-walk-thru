@@ -1,0 +1,23 @@
+.app {
+  border: red 5px solid;
+}
+
+.index {
+  border: blue 5px solid;
+}
+
+.parent {
+  border: purple 5px solid;
+}
+
+.parent-index {
+  border: green 5px solid;
+}
+
+.parent-child {
+  border: yellowgreen 5px solid;
+}
+
+.other {
+  border: pink 5px solid;
+}
